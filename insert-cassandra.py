@@ -23,9 +23,9 @@ from cassandra.query import BatchStatement # pylint: disable=no-name-in-module
 print cassandra.__version__
 
 auth_provider = PlainTextAuthProvider(username='dev', password='dev_pwd')
-cas_host_cluster = ['172.16.0.210', '172.16.0.211', '172.16.0.215', '172.16.0.216']
+cas_host_cluster = ['xxx.xxx.xxx.xxx', 'xxx.xxx.xxx.xxx', 'xxx.xxx.xxx.xxx']
 cas_port_cluster = 9042
-cas_keyspace = ('backend01', 'backend02', 'backend03')
+cas_keyspace = ('keyspace01', 'keyspace02', 'keyspace03')
 
 max_batch_insert = 1000
 event_interval = 2
@@ -86,3 +86,4 @@ session = cluster.connect()
 periodic_scheduler = PeriodicScheduler()
 periodic_scheduler.setup(event_interval, insert_event)
 periodic_scheduler.run()
+
